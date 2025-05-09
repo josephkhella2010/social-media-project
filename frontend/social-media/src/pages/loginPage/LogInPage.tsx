@@ -220,14 +220,14 @@ export default function LogInPage() {
     <div className={classes.welcomeMainWrapper}>
       <div className={classes.welcomeWrapper}>
         <ToastContainer />
-        <div>
-          {userState.isLogged ? (
+        {/*  <div>
+          {userState.user?.username ? (
             <p>
               Welcome, {userState?.user?.firstName ?? ""}{" "}
               {userState?.user?.lastName ?? ""}
             </p>
           ) : null}
-        </div>
+        </div> */}
 
         <div className={classes.loginOrRegisterSection}>
           <div className={classes.leftSection}>
