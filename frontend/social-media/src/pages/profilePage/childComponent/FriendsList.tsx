@@ -40,7 +40,8 @@ const useStyles = createUseStyles({
   FriendsTopSectionTopContent: {
     display: "flex",
     alignItems: "center",
-    gap: "10px"
+    gap: "10px",
+    cursor: "pointer"
   },
   friendsListSection: {
     width: "100%",

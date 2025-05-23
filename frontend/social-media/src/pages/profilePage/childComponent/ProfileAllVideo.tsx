@@ -12,10 +12,10 @@ const useStyles = createUseStyles({
   container: {
     width: "100%",
     height: "100%",
-    padding: "20px",
+    padding: "20px 50px 20px 20px",
     boxSizing: "border-box",
     "@media (max-width: 600px)": {
-      padding: "20px 5px"
+      padding: "20px 30px 20px 5px"
     },
     "& h1": {
       height: "100px",

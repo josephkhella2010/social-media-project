@@ -108,7 +108,8 @@ const useStyles = createUseStyles({
   LikeSection: {
     display: "flex",
     alignItems: "center",
-    gap: "15px"
+    gap: "15px",
+    cursor: "pointer"
   },
   innerLikeSection: {
     display: "flex",
@@ -251,7 +252,6 @@ export default function ProfileHomeSection() {
   const [commentArr, setCommentArr] = useState<string[][]>([]);
   const dispatch = useDispatch();
   const user = useSelector((state: RootState) => state.loginInformation.user);
-  //console.log(user);
   const navigate = useNavigate();
 
   const allData = useSelector((state: RootState) => state.media.mediaList);
@@ -270,7 +270,6 @@ export default function ProfileHomeSection() {
     //setShowComment(false);
     setShowComment((prev) => prev.filter((item) => item !== index));
   }; */
-  console.log(commentArr);
   // toggle like icon
   const toggleLike = (index: number) => {
     let newIndex = [...like];
@@ -352,11 +351,22 @@ export default function ProfileHomeSection() {
   return (
     <div className={classes.container}>
       <div className={classes.upperSection}>
-        <h3>{`${user?.firstName?.charAt(0).toUpperCase()}${user?.firstName
+        {user ? (
+          <h3>
+            {`${user.firstName?.charAt(0).toUpperCase()}${user.firstName
+              ?.slice(1)
+              .toLowerCase()} ${user.lastName
+              ?.charAt(0)
+              .toUpperCase()}${user.lastName?.slice(1).toLowerCase()}`}
+          </h3>
+        ) : (
+          <h3></h3>
+        )}
+        {/*    <h3>{`${user?.firstName?.charAt(0).toUpperCase()}${user?.firstName
           ?.slice(1)
           .toLowerCase()} ${user?.lastName
           ?.charAt(0)
-          .toUpperCase()}${user?.lastName?.slice(1).toLowerCase()}`}</h3>
+          .toUpperCase()}${user?.lastName?.slice(1).toLowerCase()}`}</h3> */}
         <div className={classes.mediaContent}>
           <p onClick={() => navigate("/profile/allImages")}>
             {" "}
